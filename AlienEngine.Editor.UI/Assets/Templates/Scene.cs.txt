@@ -1,0 +1,10 @@
+using AlienEngine;
+using System;
+
+namespace ${ProjectName}.Game
+{
+    public class ${ClassName}: Scene
+    {
+    
+    }
+}

@@ -1,0 +1,27 @@
+using AlienEngine;
+using System;
+
+namespace ${ProjectName}.Game
+{
+    public class ${ClassName}: Component
+    {
+        /// <summary>
+        /// This method is used to initialize the component.
+        /// </summary>
+        public override void Start()
+        {
+            // Initialize your component...
+            
+            // Say to AlienEngine that it is done
+            base.Start();
+        }
+    
+        /// <summary>
+        /// This method is called on each frames.
+        /// </summary>
+        public override void Update()
+        {
+            // Update your component...
+        }
+    }
+}

@@ -1,0 +1,1804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.4 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkListStore" id="_sceneEditorComponentsListStore">
+    <columns>
+      <!-- column-name _componentName -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkTreeStore" id="_sceneEditorGameElementsTreeStore">
+    <columns>
+      <!-- column-name _gameElementIcon -->
+      <column type="GdkPixbuf"/>
+      <!-- column-name _gameElementName -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentRotateAdjustementX">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentRotateAdjustementY">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentRotateAdjustementZ">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentScaleAdjustementX">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentScaleAdjustementY">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentScaleAdjustementZ">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentTranslateAdjustementX">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentTranslateAdjustementY">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkAdjustment" id="_transformComponentTranslateAdjustementZ">
+    <property name="step_increment">1</property>
+  </object>
+  <object class="GtkWindow" id="MainWindow">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">AlienEngine</property>
+    <property name="window_position">center</property>
+    <property name="default_width">1280</property>
+    <property name="default_height">768</property>
+    <property name="destroy_with_parent">True</property>
+    <child>
+      <object class="GtkBox" id="_mainWindowWrapper">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox" id="_mainContainer">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkBox" id="_appSidebar">
+                <property name="width_request">48</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkAspectFrame" id="_alienEngineLogoSquaredWrapper">
+                    <property name="width_request">48</property>
+                    <property name="height_request">48</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_bottom">12</property>
+                    <property name="label_xalign">0</property>
+                    <property name="label_yalign">0</property>
+                    <property name="shadow_type">none</property>
+                    <child>
+                      <object class="GtkImage" id="_alienEngineLogoSquare">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkViewport" id="_commandButtonsViewport">
+                    <property name="width_request">48</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="shadow_type">none</property>
+                    <child>
+                      <object class="GtkBox" id="_commandButtons">
+                        <property name="width_request">48</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonMove">
+                            <property name="width_request">48</property>
+                            <property name="height_request">48</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Move</property>
+                            <property name="tooltip_text" translatable="yes">Move</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonMoveImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="commandButton"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonRotate">
+                            <property name="width_request">48</property>
+                            <property name="height_request">48</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Rotate</property>
+                            <property name="tooltip_text" translatable="yes">Rotate</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonRotateImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="commandButton"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonScale">
+                            <property name="width_request">48</property>
+                            <property name="height_request">48</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Scale</property>
+                            <property name="tooltip_text" translatable="yes">Scale</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonScaleImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="commandButton"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSeparator" id="_commandButtonSeparator1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonGlobalView">
+                            <property name="width_request">48</property>
+                            <property name="height_request">48</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Scale</property>
+                            <property name="tooltip_text" translatable="yes">Scale</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonGlobalViewImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="commandButton"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">4</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonLocalView">
+                            <property name="width_request">48</property>
+                            <property name="height_request">48</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Scale</property>
+                            <property name="tooltip_text" translatable="yes">Scale</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonLocalViewImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="commandButton"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">5</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSeparator" id="_commandButtonSeparator2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">6</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonLocalView1">
+                            <property name="width_request">48</property>
+                            <property name="height_request">48</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Scale</property>
+                            <property name="tooltip_text" translatable="yes">Scale</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonScaleImage2">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="commandButton"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">7</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="_optionsMenu">
+                    <property name="width_request">48</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkButton" id="_optionButtonHelp">
+                        <property name="width_request">48</property>
+                        <property name="height_request">48</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="has_tooltip">True</property>
+                        <property name="tooltip_markup" translatable="yes">Scale</property>
+                        <property name="tooltip_text" translatable="yes">Scale</property>
+                        <property name="relief">none</property>
+                        <property name="always_show_image">True</property>
+                        <child>
+                          <object class="GtkImage" id="_optionButtonHelpImage">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                        </child>
+                        <style>
+                          <class name="commandButton"/>
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="_optionButtonSettings">
+                        <property name="width_request">48</property>
+                        <property name="height_request">48</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="has_tooltip">True</property>
+                        <property name="tooltip_markup" translatable="yes">Scale</property>
+                        <property name="tooltip_text" translatable="yes">Scale</property>
+                        <property name="relief">none</property>
+                        <property name="always_show_image">True</property>
+                        <child>
+                          <object class="GtkImage" id="_optionButtonSettingsImage">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                        </child>
+                        <style>
+                          <class name="commandButton"/>
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="_optionButtonProjects">
+                        <property name="width_request">48</property>
+                        <property name="height_request">48</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="has_tooltip">True</property>
+                        <property name="tooltip_markup" translatable="yes">Scale</property>
+                        <property name="tooltip_text" translatable="yes">Scale</property>
+                        <property name="relief">none</property>
+                        <property name="always_show_image">True</property>
+                        <child>
+                          <object class="GtkImage" id="_optionButtonProjectsImage">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                          </object>
+                        </child>
+                        <style>
+                          <class name="commandButton"/>
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="pack_type">end</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="_mainViewBox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkMenuBar" id="_appMenuBar">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">File</property>
+                        <child type="submenu">
+                          <object class="GtkMenu" id="menu1">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem1">
+                                <property name="label">gtk-new</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem2">
+                                <property name="label">gtk-open</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem3">
+                                <property name="label">gtk-save</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem4">
+                                <property name="label">gtk-save-as</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkSeparatorMenuItem" id="separatormenuitem1">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem5">
+                                <property name="label">gtk-quit</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Edit</property>
+                        <child type="submenu">
+                          <object class="GtkMenu" id="menu2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem6">
+                                <property name="label">gtk-cut</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem7">
+                                <property name="label">gtk-copy</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem8">
+                                <property name="label">gtk-paste</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem9">
+                                <property name="label">gtk-delete</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">View</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkMenuItem" id="menuitem4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Help</property>
+                        <child type="submenu">
+                          <object class="GtkMenu" id="menu3">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkImageMenuItem" id="imagemenuitem10">
+                                <property name="label">gtk-about</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="use_stock">True</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolbar" id="_appToolbar">
+                    <property name="height_request">16</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="toolbar_style">icons</property>
+                    <property name="icon_size">2</property>
+                    <child>
+                      <object class="GtkToolItem" id="_toolbarUndoButton">
+                        <property name="width_request">16</property>
+                        <property name="height_request">16</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="has_tooltip">True</property>
+                        <property name="tooltip_markup" translatable="yes">Undo</property>
+                        <property name="tooltip_text" translatable="yes">Undo</property>
+                        <property name="is_important">True</property>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonUndo">
+                            <property name="width_request">16</property>
+                            <property name="height_request">16</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">Undo</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonUndoImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="toolbarItemButton"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkToolItem" id="_toolbarRedoButton">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="tooltip_text" translatable="yes">Redo</property>
+                        <property name="is_important">True</property>
+                        <child>
+                          <object class="GtkButton" id="_commandButtonRedo">
+                            <property name="width_request">16</property>
+                            <property name="height_request">16</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="tooltip_text" translatable="yes">Redo</property>
+                            <property name="relief">none</property>
+                            <property name="always_show_image">True</property>
+                            <child>
+                              <object class="GtkImage" id="_commandButtonRedoImage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="toolbarItemButton"/>
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkNotebook" id="notebook1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <child>
+                      <object class="GtkPaned">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="wide_handle">True</property>
+                        <child>
+                          <object class="GtkTreeView" id="_sceneEditorGameElementsTreeView">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="model">_sceneEditorGameElementsTreeStore</property>
+                            <property name="headers_clickable">False</property>
+                            <property name="rules_hint">True</property>
+                            <property name="rubber_banding">True</property>
+                            <property name="enable_tree_lines">True</property>
+                            <property name="activate_on_single_click">True</property>
+                            <child internal-child="selection">
+                              <object class="GtkTreeSelection">
+                                <property name="mode">multiple</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkTreeViewColumn" id="sceneEditorGameElementsListColumn">
+                                <property name="title">GameElements</property>
+                                <property name="reorderable">True</property>
+                                <child>
+                                  <object class="GtkCellRendererPixbuf" id="gameElementIcon"/>
+                                  <attributes>
+                                    <attribute name="pixbuf">0</attribute>
+                                  </attributes>
+                                </child>
+                                <child>
+                                  <object class="GtkCellRendererText" id="gameElementName"/>
+                                  <attributes>
+                                    <attribute name="text">1</attribute>
+                                  </attributes>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="resize">False</property>
+                            <property name="shrink">True</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkPaned">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="wide_handle">True</property>
+                            <child>
+                              <object class="GtkAlignment" id="_sceneGLAlignement">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="resize">True</property>
+                                <property name="shrink">True</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkScrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <child>
+                                  <object class="GtkViewport">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="shadow_type">none</property>
+                                    <child>
+                                      <object class="GtkBox">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="orientation">vertical</property>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="orientation">vertical</property>
+                                            <child>
+                                              <object class="GtkButton" id="_sceneEditorTransformComponentRevealerSwitch">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="relief">none</property>
+                                                <child>
+                                                  <object class="GtkBox">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="spacing">12</property>
+                                                    <child>
+                                                      <object class="GtkImage" id="_sceneEditorTransformComponentRevealerSwitchImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkLabel" id="_sceneEditorTransformComponentRevealerSwitchLabel">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="label" translatable="yes">Transform</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">1</property>
+                                                      </packing>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                                <style>
+                                                  <class name="componentSettingsTitle"/>
+                                                </style>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkRevealer" id="_sceneEditorTransformComponentRevealer">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="transition_type">slide-up</property>
+                                                <property name="reveal_child">True</property>
+                                                <child>
+                                                  <object class="GtkGrid">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="row_spacing">5</property>
+                                                    <property name="column_spacing">5</property>
+                                                    <child>
+                                                      <object class="GtkImage" id="_sceneEditorTransformComponentTranslateImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage" id="_sceneEditorTransformComponentRotateImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage" id="_sceneEditorTransformComponentScaleImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentTranstateSpinX">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="adjustment">_transformComponentTranslateAdjustementX</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">5</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentTranstateSpinY">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentTranslateAdjustementY</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentRotateSpinX">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentRotateAdjustementX</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentRotateSpinY">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentRotateAdjustementY</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentScaleSpinX">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentScaleAdjustementX</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentScaleSpinY">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentScaleAdjustementY</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentTranstateSpinZ">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentTranslateAdjustementZ</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentRotateSpinZ">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentRotateAdjustementZ</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkSpinButton" id="_sceneEditorTransformComponentScaleSpinZ">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                        <property name="text" translatable="yes">0,00</property>
+                                                        <property name="adjustment">_transformComponentScaleAdjustementZ</property>
+                                                        <property name="climb_rate">0.10000000000000001</property>
+                                                        <property name="digits">2</property>
+                                                        <property name="numeric">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <style>
+                                                      <class name="p-8"/>
+                                                    </style>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="orientation">vertical</property>
+                                            <child>
+                                              <object class="GtkButton" id="_sceneEditorTransformComponentRevealerSwitch1">
+                                                <property name="label" translatable="yes">Transform</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="relief">none</property>
+                                                <style>
+                                                  <class name="componentSettingsTitle"/>
+                                                </style>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkRevealer" id="_sceneEditorTransformComponentRevealer1">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="transition_type">slide-up</property>
+                                                <property name="reveal_child">True</property>
+                                                <child>
+                                                  <object class="GtkGrid">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="row_spacing">5</property>
+                                                    <property name="column_spacing">5</property>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <style>
+                                                      <class name="p-8"/>
+                                                    </style>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="orientation">vertical</property>
+                                            <child>
+                                              <object class="GtkButton" id="_sceneEditorTransformComponentRevealerSwitch2">
+                                                <property name="label" translatable="yes">Transform</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="relief">none</property>
+                                                <style>
+                                                  <class name="componentSettingsTitle"/>
+                                                </style>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkRevealer" id="_sceneEditorTransformComponentRevealer2">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="transition_type">slide-left</property>
+                                                <property name="reveal_child">True</property>
+                                                <child>
+                                                  <object class="GtkGrid">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="row_spacing">5</property>
+                                                    <property name="column_spacing">5</property>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <style>
+                                                      <class name="p-8"/>
+                                                    </style>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">2</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="orientation">vertical</property>
+                                            <child>
+                                              <object class="GtkButton" id="_sceneEditorTransformComponentRevealerSwitch3">
+                                                <property name="label" translatable="yes">Transform</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="relief">none</property>
+                                                <style>
+                                                  <class name="componentSettingsTitle"/>
+                                                </style>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkRevealer" id="_sceneEditorTransformComponentRevealer3">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="transition_type">slide-right</property>
+                                                <property name="reveal_child">True</property>
+                                                <child>
+                                                  <object class="GtkGrid">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="row_spacing">5</property>
+                                                    <property name="column_spacing">5</property>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <style>
+                                                      <class name="p-8"/>
+                                                    </style>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">3</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="orientation">vertical</property>
+                                            <child>
+                                              <object class="GtkButton" id="_sceneEditorTransformComponentRevealerSwitch4">
+                                                <property name="label" translatable="yes">Transform</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="receives_default">True</property>
+                                                <property name="relief">none</property>
+                                                <style>
+                                                  <class name="componentSettingsTitle"/>
+                                                </style>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkRevealer" id="_sceneEditorTransformComponentRevealer4">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="transition_type">crossfade</property>
+                                                <property name="reveal_child">True</property>
+                                                <child>
+                                                  <object class="GtkGrid">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">False</property>
+                                                    <property name="row_spacing">5</property>
+                                                    <property name="column_spacing">5</property>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkImage">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">False</property>
+                                                        <property name="stock">gtk-missing-image</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">0</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">0</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">1</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">1</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">2</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <child>
+                                                      <object class="GtkEntry">
+                                                        <property name="visible">True</property>
+                                                        <property name="can_focus">True</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="left_attach">3</property>
+                                                        <property name="top_attach">2</property>
+                                                      </packing>
+                                                    </child>
+                                                    <style>
+                                                      <class name="p-8"/>
+                                                    </style>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">4</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="resize">False</property>
+                                <property name="shrink">True</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="resize">True</property>
+                            <property name="shrink">True</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="reorderable">True</property>
+                        <property name="detachable">True</property>
+                      </packing>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="_scenePageLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Scene</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="checkbutton1">
+                        <property name="label" translatable="yes">checkbutton</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                        <property name="reorderable">True</property>
+                        <property name="detachable">True</property>
+                      </packing>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="_gamePageLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Game</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="position">1</property>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                      </object>
+                      <packing>
+                        <property name="position">2</property>
+                        <property name="reorderable">True</property>
+                        <property name="detachable">True</property>
+                      </packing>
+                    </child>
+                    <child type="tab">
+                      <object class="GtkLabel" id="_scriptEditorPageLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Script Editor</property>
+                        <property name="justify">center</property>
+                      </object>
+                      <packing>
+                        <property name="position">2</property>
+                        <property name="tab_fill">False</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="_appStatusbar">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="spacing">2</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+  </object>
+</interface>
